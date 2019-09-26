@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>객체</title>
+  </head>
+  <body>
+    <p><a href="3.html">이전페이지</a></p>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var coworkers = {
+        "programmer":"egoing",
+        "designer":"leezche"
+      }
+      document.write("Programmer : "+coworkers.programmer+"<br>");
+      document.write("Designer : "+coworkers.designer+"<br>");
+      coworkers.bookkeeper = "duru";
+      document.write("Bookkeeper : "+coworkers.bookkeeper+"<br>");
+      coworkers["data scientist"]= "taeho"
+      document.write("Data Scientist : "+coworkers["data scientist"]+"<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+      for(var key in coworkers){
+        document.write(key + ' : '+coworkers[key]+'<br>')
+      }
+    </script>
+    <h2>Property & Mehod</h2>
+    <script>
+      coworkers.showAll = function(){
+        for(var key in this){
+          document.write(key + ' : '+this[key]+'<br>');
+        }
+      }
+      coworkers.showAll();
+    </script>
+
+    <h2>Test</h2>
+    <ol>
+      <script>
+      var list = {
+        "HTML" : "1.html",
+        "CSS" : "2.html",
+        "Java Script" : "3.html"
+      }
+      for(var key in list){
+        document.write('<li><a href="'+list[key]+'">'+key+'</a></li>')
+      }
+      </script>
+    </ol>
+  </body>
+</html>

@@ -3,43 +3,7 @@
 <head>
   <title>WEB1 - CSS</title>
   <meta charset="utf-8">
-  <style>
-    #active {
-      color:red;
-    }
-    .saw {
-      color:gray;
-    }
-    body {
-      font-family:"times new roman"
-    }
-    a {
-      color:black;
-      text-decoration:none;
-    }
-    h1 {
-      font-size: 60px;
-      text-align: center;
-      border-bottom:2px solid black;
-      Margin:0;
-    }
-    ol {
-      border-right: 2px solid black;
-      Width: 100px;
-      margin:0;
-      padding:20px;
-    }
-    #grid {
-      display:grid;
-      grid-template-columns: 150px 1fr;
-    }
-    #grid ol {
-      padding-left: 35px;
-    }
-    #grid #article {
-      padding-left: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146919761-1"></script>
 <script>
@@ -49,28 +13,67 @@
 
   gtag('config', 'UA-146919761-1');
 </script>
+<script src="colors.js"></script>
 </head>
 
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <div id="grid">
     <ol>
-      <li><a href="1.html">HTML</a></li>
-      <li><a href="2.html" id="active">CSS</a></li>
-      <li><a href="3.html">JavaScript</a></li>
+      <script src="list.js"></script>
     </ol>
     <div id="article">
+      <input style="margin-top:20px;" type="button" value="Night" onclick="
+        NightDayHandler(this);
+      ">
       <h2>CSS</h2>
-      <p>
-        Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
-      </p>
-      <p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ok0bBJPtgJI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </p>
-      <p>&nbsp;</p>
-      <p>스터디 사이트: <a href="https://opentutorials.org/course/3086" target="_blank" style="text-decoration:underline">생활코딩 https://opentutorials.org/course/3086</a></p>
+        <p>
+          Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+        </p>
+        <p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Ok0bBJPtgJI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        <p>&nbsp;</p>
+        <p>스터디 사이트: <a href="https://opentutorials.org/course/3086" target="_blank" style="text-decoration:underline">생활코딩 https://opentutorials.org/course/3086</a></p>
+        <h3>- CSS가 등장하기 이전 -</h3>
+          <p><strong>Font Tag</strong>: &lt;font&gt; &lt;/font&gt;<br>
+            - 디자인을 위한 Tag, 지금은 사용안함. 예시: &lt;font color="red"&gt; &lt;/font&gt;</p>
+          <p>&nbsp;</p>
+
+        <h3>- CSS를 사용 -</h3>
+          <p>* &lt;!-- , --&gt; 안에 내용은 무시하도록 처리</p>
+          <p><strong>Style Tag</strong>: &lt;style&gt; &lt;/style&gt;<br>
+            - 디자인을 정의하기 위한 새로운 언어(CSS), style tag를 통해서 정의하거나 HTML style 속성으로 처리할 수 있음.</p>
+          <p><strong>Tag</strong> 예시<br> &lt;style&gt;<br> a {<br>color:red;<br>}<br> &lt;/style&gt;</p>
+          <p><strong>속성</strong> 예시<br> &lt;a href="1.html" <strong>style="color:red"</strong>&gt;</p>
+          <p><a href="https://www.w3schools.com/cssref/default.asp" target:"_blank">CSS Properites</a></p>
+          <p>&nbsp;</p>
+
+        <h3>- 중복된 코드를 제거 -</h3>
+          선택자(Selctors)를 사용<br>
+          <strong>ID 선택자</strong> Tag에 id="id" 입력 - CSS에서 #id { }로 정의<br> <strong>Class 선택자</strong> Tag에 class="class" 입력 - CSS에서 .class { }로 정의<br> <strong>Tag 선택자</strong> CSS에서 a { }로 정의<br>
+           { } = 선택자내에 효과를 정의, ;=구분자</p>
+          <p><a href="https://www.w3schools.com/cssref/css_selectors.asp" target:"_blank">CSS Selectors</a></p>
+          <p>&nbsp;</p>
+
+        <h3>- Box Model -</h3>
+          <p><strong>Block Level Elemnet</strong> = 화면을 모두 차지함<br> <strong>Inline Elemnent</strong> = 자신의 크기 만큼만 자치함<br> <strong>Display</strong> 속성을 이용하여 변경 가능, 예시 style="display:Inline"</p>
+          <p>CSS 내에서는 /* */ 안의 내용은 무시(Style Tag내)</p>
+          <p>여러개의 선택자를 콤마(,)를 사용하여 중복에 대한 코드를 줄일 수 있음</p>
+          <p><strong>CSS Border</strong>: Contant의 테두리<br> 웹페이지에서 마우스 오른쪽 버튼을 눌러 검사 기능을 실행하여 확인가능<br> <img src="boxmodel.jpg" width="300px"</p>
+          <p><strong>Grid</strong> : 화면을 분할하여 표시<br> disply:grid; grid-tmeplate-columns:150px 1fr;</p>
+          <p><strong>Div Tag</strong>: &lt;div&gt; &lt;/div&gt;<br> Groping하는 Tag (Block Element)</p>
+          <strong>Span Tag</strong>: &lt;span&gt; &lt;/spen&gt;<br> Groping하는 Tag (Inline Element)</p>
+          <p>특정코드 사용가능 여부 확인하기 - <a href="https://caniuse.com" target="_blank">Caniuse</a></p>
+          <p><strong>Media Query</strong>: 반응형 디자인<br>
+           예시: @media(max-width:800px){ }</p>
+           <p><strong>CSS파일 별도 생성</strong><br>
+             style tag의 내용을 CSS파일을 별도로 저장하여 중복 제거<br>
+             각 페이지에 Style Tag 대신 &lt;link rel="stylesheet" href="style.css"&gt; 입력</p>
+          <p>&nbsp;</p>
     </div>
   </div>
+  
   <p>
     <div id="disqus_thread"></div>
     <script>
@@ -93,6 +96,7 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </p>
+
   <p>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

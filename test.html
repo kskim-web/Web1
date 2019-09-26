@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.example {
+  border: 1px solid black;
+  margin: 5px;
+}
+a {
+  text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<h1>A h1 element</h1>
+
+<div>A div element</div>
+
+<p>A p element.</p>
+
+<p>Another p element.</p>
+
+<div class="example">
+  <p>A p element inside a div element.</p>
+</div>
+
+<p>Click the button to change the background color of all p elements in the document.</p>
+
+<button onclick="myFunction1()">Try it1</button>
+<button onclick="myFunction2()">Try it2</button>
+
+<p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
+<a href="1.html">test1</a>
+<a href="1.html">tst2</a>
+<a href="1.html">test3</a>
+<script>
+function myFunction1() {
+  var x = document.querySelectorAll("a");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.color = "red";
+  }
+}
+function myFunction2() {
+  var x = document.querySelectorAll("a");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.color = "green";
+  }
+}
+</script>
+
+</body>
+</html>

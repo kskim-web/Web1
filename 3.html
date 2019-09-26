@@ -3,43 +3,7 @@
 <head>
   <title>WEB1 - JavaScript</title>
   <meta charset="utf-8">
-  <style>
-    #active {
-      color:red;
-    }
-    .saw {
-      color:gray;
-    }
-    body {
-      font-family:"times new roman"
-    }
-    a {
-      color:black;
-      text-decoration:none;
-    }
-    h1 {
-      font-size: 60px;
-      text-align: center;
-      border-bottom:2px solid black;
-      Margin:0;
-    }
-    ol {
-      border-right: 2px solid black;
-      Width: 100px;
-      margin:0;
-      padding:20px;
-    }
-    #grid {
-      display:grid;
-      grid-template-columns: 150px 1fr;
-    }
-    #grid ol {
-      padding-left: 35px;
-    }
-    #grid #article {
-      padding-left: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146919761-1"></script>
 <script>
@@ -49,28 +13,113 @@
 
   gtag('config', 'UA-146919761-1');
 </script>
+<script src="colors.js"></script>
 </head>
 
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <div id="grid">
     <ol>
-      <li><a href="1.html">HTML</a></li>
-      <li><a href="2.html">CSS</a></li>
-      <li><a href="3.html" id="active">JavaScript</a></li>
+      <script src="list.js"></script>
     </ol>
     <div id="article">
+      <input style="margin-top:20px;" type="button" value="Night" onclick="
+        NightDayHandler(this);
+      ">
       <h2>JavaScript</h2>
-      <p>
-        JavaScript (/ˈdʒɑːvəˌskrɪpt/),[8] often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
-      </p>
-      <p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/dPRtcRwKo-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </p>
-      <p>&nbsp;</p>
-      <p>스터디 사이트: <a href="https://opentutorials.org/course/3085" target="_blank" style="text-decoration:underline">생활코딩 https://opentutorials.org/course/3085</a></p>
+        <p>
+          JavaScript (/ˈdʒɑːvəˌskrɪpt/),[8] often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
+        </p>
+        <p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dPRtcRwKo-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        <p>&nbsp;</p>
+        <p>스터디 사이트: <a href="https://opentutorials.org/course/3085" target="_blank">생활코딩 https://opentutorials.org/course/3085</a></p>
+        <p>&nbsp;</p>
+
+        <h3>- JavaScript의 만남 -</h3>
+          <h4>Script Tag</h4>
+          <p>&lt;script&gt;  &lt;/script&gt;<br>
+          JavaScript 언어를 정의하기 위해 사용 / Html은 정적, JavaScript는 동적<br>
+          예시: document.write(1+1); 덧셈하여 2가 출력됨</p>
+          <p><a href="ex1.html" title="ex1.html">Script Tag 예제파일</a></p>
+
+          <h4>Input Tag (Event)</h4>
+            <p> &lt;Input&gt; <strong>Event</strong>를 정의<br>
+             예시1) &lt;input type="button" value="Hi" <strong>onclick</strong>="alert('Hi')"&gt;<br>
+             예시2) &lt;input type="text" <strong>onchange</strong>="alert('Chagnged')"&gt;<br>
+             예시3) &lt;input type="text" <strong>onkeydown</strong>="alert('Key Down!')"&gt;<br></p>
+             <p><a href="ex2.html" title="ex2.html">Input Tag 예제파일</a></p>
+
+          <h4>Console</h4>
+            <p>웹페이지에서 JavaScript를 작성하여 사전에 결과를 확인하는데 유용<br>
+              웹페이지에서 마우스 오른쪽버튼을 클릭하여 검사를 선택 후 Console Tab에서 확인<br>
+              예시: alert('text'.length) - ' '안에 글자 개수를 출력</p>
+            <p>&nbsp;</p>
+
+        <h3>- Data Type -</h3>
+          <p>Boolean, Null, Undefined, <strong>Number</strong>, <strong>String</strong>, Symbol, Object</p>
+
+          <h4>Number, String</h4>
+            <p><strong>Number</strong> = 1, <strong>String</strong> = "1", "Hello World", 'Hello World'<br>
+              예시)<strong>Number</strong> 1+1 = 2, <strong>String</strong> "1" + "1"= "11"></p>
+            <p>'Hello World'.length = 글자 개수 출력, 'Hello World'.toUpperCase() = 대문자 변환, 'Hello World'.indexOf('o') = 문자열 위(0부터 시작), ' &nbsp;&nbsp;Hello&nbsp;&nbsp; '.trim = 공백제거 / Consol을 통해 확인 가능</p>
+
+            <p><strong>변수와 대입 연산자</strong><br>
+            x = 1, "x"는 변수 "="는 대입연산자<br>
+            예시) var name = 'test'</p>
+
+          <h4>CSS 기초</h4>
+            <p><a href="ex3.html" title="ex3.html">CSS 예제파일</a></p>
+            <p>&nbsp;</p>
+
+            <h3>- 웹브라우저 제어 -</h3>
+            <h4>제어할 Tag 선택</h4>
+            <p>document.querySelector(' ')<br>
+            예시) document.querySelector('body').style.backgroundColor = 'black'; </p>
+
+          <h4>Comparison Operators (비교연산자) & Boolean</h4>
+            <p>1===1 <br>
+              예시) &lt;script&gt; document.write(1===1); &lt;/script&gt;</p>
+            <p><a href="ex4.html"  title="ex4.html">비교 연산자 예제파일</a></p>
+
+          <h4>조건문</h4>
+            <p>비교 연산자를와 Boolean을 사용하여 조건문을 생성</p>
+            <p>예시: if (true) {<br>document.write('true') <br>} else {<br>document.write('false')<br>}</p>
+            <p><a href="ex5.html" title="ex5.html">조건문 예제파일</a></p>
+
+          <h4>리팩토링</h4>
+            <p>중복의 제거 - 무조건 중복을 제거해야 유지보수가 편하다..</p>
+
+          <h4>반복문</h4>
+            <p><strong>배열</strong>: 반복문을 위해 사용. Array</p>
+            <p>예시: var coworkers = ["egoing", "leezche"]</p>
+            <p><a href="ex6.html" title="ex6.html">배열 예제파일</a></p>
+
+            <p><strong>반복문</strong>: 순서의 흐름을 제어(조건문과 함께)</p>
+            <p>예시: var i = 0;<br> while (i < 3 ) {<br>document.write('test');<br> i = i + 1;<br>}</p>
+            <p><a href="ex7.html" title="ex7.html">반복문 예제파일</a></p>
+
+            <p><strong>배열과 반복문의 활용</strong></p>
+            <p>예시: var test = ['egoing', 'leezche', 'duru', 'taeho']<br>
+            var i = 0;<br> while (i < 3 ) {<br>document.write('+test[i]+');<br> i = i + 1;<br>}</p>
+            <p>배열 개수에 상관없이 정의하려면 while (i < 3 ) 대신 (i < test.length)로 정의</p>
+            <p><a href="ex8.html" title="ex8.html">배열과 반복문 예제파일</a></p>
+
+          <h4>함수</h4>
+            <p><strong>Function</strong>: 코드를 모아놓은 수납상자, 리팩토링을 위한 도구</p>
+            <p><strong>Parameter</strong>: 입력, 매개변수 / function sum(left, right)</p>
+            <p><strong>Argument</strong>: 인자 / sum(2,3)</p>
+            <p><strong>Return</strong>: 출력(결과), 추가적인 연산, 스타일을 변경하는데 유용  / return left+right</p>
+            <p><a href="ex9.html" title="ex9.html">함수 예제파일</a></p>
+
+          <h4>객체(Object)</h4>
+            <p>서로 연관된 함수와 연관된 변수를 그룹핑하여 관리하기위한 수납상자</p>
+            <p>객체에 포함되어 있는 함수는 Method, 변수는 Property.</p>
+            <p><a href="ex10.html" title="ex10.html">객체 예제파일</a></p>
     </div>
   </div>
+
   <p>
     <div id="disqus_thread"></div>
     <script>
@@ -93,6 +142,7 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </p>
+
   <p>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
